@@ -7,6 +7,7 @@ body {
 	color: #240D57;
 }
 
+
 .navbar {
 	position: sticky;
 	width: 100%;
@@ -18,7 +19,8 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
+	box-shadow: 0px 0px 25px -10px rgb(0 0 0 / 10%);
+	
 	.logo {
 		display: flex;
 		align-items: center;
@@ -28,13 +30,13 @@ body {
 		background: -webkit-linear-gradient(180deg,#8361ff 1.74%,#e87bf8);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-
+		
 		img {
 			max-width: 36px;
 			border-radius: 50%;
 		}
 	}
-
+	
 	.login-signup {
 		height: 36px;
 		background: linear-gradient(95.6deg,#8361ff 1.74%,#e87bf8);;
@@ -53,51 +55,66 @@ button {
 	font-size: 100%;
 }
 
-.header, .invite, .party {
-	background: linear-gradient(270deg,#e9dfff -43.12%,#fff 121.3%);
+#container {
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	height: 100vh;
 }
 
-.header-container, .invite-container {
-	padding-right: 96px;
-}
+// #container::-webkit-scrollbar {
+	// 	visibility: hidden;
+	// 	width: 0;
+	// }
 
-.create, .texts, .footer {
-	background: rgb(253, 253, 253);
-}
-
-.party {
-	height: 468px;
-}
-
-.party-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.footer {
-	height: 144px;
-	padding: 24px 16px;
-}
-
-.footer-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.links {
-	display: flex;
-	p {
-		margin: 2px;
-		height: 48px;
-		padding: 0 12px;
+	section {
+		scroll-snap-align: start;
 	}
-	.small-link {
-		max-height: 48px;
+	
+	.header, .invite, .party {
+		background: linear-gradient(270deg,#e9dfff -43.12%,#fff 121.3%);
+	}
+	
+	.header-container, .invite-container {
+		padding-right: 96px;
+	}
+	
+	.create, .texts, .footer {
+		background: rgb(253, 253, 253);
+	}
+	
+	.party {
+		height: 468px;
+	}
+	
+	.party-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	
+	.footer {
+		max-height: 144px;
+		padding: 24px 16px;
+	}
+	
+	.footer-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	
+	.links {
+		display: flex;
+		p {
+			margin: 2px;
+			height: 48px;
+			padding: 0 12px;
+		}
+		.small-link {
+			max-height: 48px;
 	}
 }
 
@@ -122,7 +139,7 @@ button {
 		font-size: 1.875rem;
 		line-height: 2.25rem;
 	}
-
+	
 	button {
 		max-width: 327px;
 	}
@@ -186,21 +203,35 @@ button {
 
 .gradient-button {
 	background: linear-gradient(90deg,#501fc1,#c245d3,#f0567a);
+	background-size: 400% 400%;
 	font-size: 1.125rem;
 	line-height: 1.75rem;
 	padding: 1rem 5rem;
+	animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change {
+	0% {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0 50%;
+	}
 }
 
 .create-container {
 	// @extend .header;
 	width: 100%;
-
+	
 	button {
 		display: flex;
 		align-items: center;
 		height: 52px;
 	}
-
+	
 	.create-content {
 		display: flex;
 		box-sizing: border-box;
