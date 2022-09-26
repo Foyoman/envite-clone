@@ -9,9 +9,9 @@ body {
 
 
 .navbar {
-	position: sticky;
+	// position: sticky;
 	width: 100%;
-	top: 0;
+	// top: 0;
 	background-color: white;
 	box-sizing: border-box;
 	height: 64px;
@@ -44,6 +44,10 @@ body {
 		--tw-shadow: 0 0 5px rgba(0,0,0,.6);
     --tw-shadow-colored: 0 0 5px var(--tw-shadow-color);
 	}
+
+	.login-signup:hover {
+		opacity: .75;
+	}
 }
 
 button {
@@ -53,12 +57,14 @@ button {
 	padding: 6px 24px;
 	border-radius: 10px;
 	font-size: 100%;
+	cursor: pointer;
+	white-space: nowrap;
 }
 
 #container {
 	scroll-snap-type: y mandatory;
 	overflow-y: scroll;
-	height: 100vh;
+	height: $vh-nav;
 }
 
 // #container::-webkit-scrollbar {
@@ -133,16 +139,17 @@ button {
 		margin: 0;
 	}
 	
-	.subheading {
-		text-align: right;
-		margin-bottom: 48px;
-		font-size: 1.875rem;
-		line-height: 2.25rem;
-	}
 	
 	button {
 		max-width: 327px;
 	}
+}
+
+.subheading {
+	text-align: right;
+	margin-bottom: 48px;
+	font-size: 1.875rem;
+	line-height: 2.25rem;
 }
 
 .red {
@@ -151,17 +158,29 @@ button {
 
 .screenshot-container {
 	flex: 1 1 0;
-	width: 0;
+	display: inline-flex;
+	justify-content: center;
+	// width: 0;
+	width: 100%;
 	height: 100%;
 	max-height: 1015px; 
-	text-align: center;
-	max-width: 384px;
+	// text-align: center;
+	// max-width: 640px;
 	margin: 0 auto;
+}
+
+.texts-screenshot-container {
+	@extend .screenshot-container;
+	min-width: max-content;
+	margin: 0;
 }
 
 .screenshot {
 	height: 100%;
-	max-height: 1015px; 
+	max-height: 1015px;
+	width: auto;
+	max-width: 100%;
+	object-fit: contain;
 	box-shadow: 0px 10px 25px 0px rgba(0,0,0,.2);
 	border: none;
 	border-radius: 2.1vh;
@@ -243,5 +262,80 @@ button {
 	.create-text {
 		margin-bottom: 32px;
 		// width: 284px;
+	}
+}
+
+@media only screen and (max-width: 1280px) {
+	.primary-text {
+		font-size: 48px;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.primary-text {
+		font-size: 36px;
+		margin-bottom: 20px;
+	}
+	.subheading {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	.header-container, .invite-container {
+		padding-right: 0;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		max-width: 100%;
+		padding: 64px 16px;
+	}
+	.content, .create-content, .party-container {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-left: 0 !important; 
+	}
+	.create-container {
+		flex-direction: column-reverse;
+	}
+	.header, .invite {
+		background: linear-gradient(180.03deg,#fff 48.09%,#e9dfff 99.97%);
+	}
+	.party {
+		background: white;
+	}
+	.screenshot-container {
+		max-height: 452px;
+	}
+	.right-flex {
+		align-items: center;
+	}
+	.primary-text, .right-align, .subheading {
+		text-align: center;
+	}
+	.primary-text { 
+		font-size: 30px;
+	}
+	.subheading {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+	.typed {
+		display: block;
+	}
+	.gradient-button {
+		max-height: 48px;
+		padding: 12px 48px;
+		display: flex;
+		align-items: center;
+	}
+	.logo {
+		font-size: 28px !important;
 	}
 }

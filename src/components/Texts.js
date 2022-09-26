@@ -1,5 +1,5 @@
 import React from 'react';
-import texts from '../images/texts-screenshot.webp';
+import texts from '../images/texts-screenshot.png';
 
 export default function Texts() {
 	return (
@@ -22,7 +22,7 @@ export default function Texts() {
 						<button className='gradient-button' style={{ whiteSpace: 'nowrap' }}>👀 Slide into my DM's</button>
 					</div>
 				</div>
-				<div className='screenshot-container'>
+				<div className='texts-screenshot-container'>
 					<img className='texts-screenshot' src={ texts } alt="create your event screenshot" />
 				</div>
 			</div>

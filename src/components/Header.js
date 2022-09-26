@@ -16,6 +16,7 @@ export default function Header() {
 								<span style={{ display: 'block' }}>Imagine if</span>  
 								<span className='red'>
 									<Typed 
+									  className='typed'
 										strings={[
 											"Instagram",
 											"Snapchat",
