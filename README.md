@@ -1,6 +1,6 @@
-# Edward's envited clone
+# Edward's Envited clone
 
-Hi team @ envited / Mihailo! In preparation for my technical assessment I decided to practice by recreating your site.
+Hi team @ Envited / Mihailo! In preparation for my technical assessment I decided to practice by recreating your site.
 
 [Here](https://envited-clone.netlify.app/) is the link to the deployed site on netlify!
 
