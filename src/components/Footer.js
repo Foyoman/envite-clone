@@ -7,7 +7,7 @@ export default function Footer() {
 				<div className='links'>
 					<p>
 						Disposable Camera 
-						<span style={{ display: 'block' }}>
+						<span className='promo'>
 							Promotion T&Cs
 						</span>
 					</p>
